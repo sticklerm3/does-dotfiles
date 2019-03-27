@@ -1,8 +1,5 @@
 # aliases
 
-# PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
-alias plistbuddy="/usr/libexec/PlistBuddy"
-
 # shortcuts
 alias fuckyou="sudo rm -Rf"
 alias please='sudo'
@@ -14,33 +11,28 @@ alias ls="colorls"
 # alias lsa="colorls -lA"
 alias lc="colorls -lA --sd"
 
-# zsh stuff
-alias zshconfig="nano ~/.zshrc"
-alias zshrc="atom ~/.zshrc"
-alias zsh!="source ~/.zshrc"
-
 # Equality 🏳️‍🌈
 alias herstory='history'
 
 # Mac Stuff
 alias tmstatus='tmutil status'
 alias fastbackup='sudo sysctl debug.lowpri_throttle_enabled=0'
+alias plistbuddy="/usr/libexec/PlistBuddy"
+alias lsregister="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister"
 
 # Misc
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
 alias profox="/Applications/Firefox.app/Contents/MacOS/firefox-bin --profilemanager"
-alias pms="/Applications/Plex\ Media\ Server.app/Contents/MacOS/Plex\ Media\ Scanner"
-alias byefelicia='sudo reboot'
-alias pocket='pocket-cli'
-alias pkt='pocket-cli'
-alias pct='pocket-cli'
-alias b16='base16-manager'
+alias byefelicia="sudo reboot"
+alias pocket="pocket-cli"
+alias pkt="pocket-cli"
+alias pct="pocket-cli"
+alias b16="base16-manager"
 alias rbenvdr="curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash"
-# alias netctl='networksetup'
-alias lsregister="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister"
+alias shrtct="shortcuts"
 
 # Objective See (use 'foo -h' for more info on each)
-alias reikey="/Users/Matthew/Applications/ReiKey.app/Contents/MacOS/ReiKey"
+alias reikey="/Applications/ReiKey.app/Contents/MacOS/ReiKey"
 alias knockknock="/Applications/KnockKnock.app/Contents/MacOS/KnockKnock"
 alias taskexplorer="/Applications/TaskExplorer.app/Contents/MacOS/TaskExplorer"
 
@@ -48,15 +40,3 @@ alias taskexplorer="/Applications/TaskExplorer.app/Contents/MacOS/TaskExplorer"
 alias ytdl=youtube-dl
 alias ytd=youtube-dl
 alias ytx="youtube-dl -x --audio-format mp3"
-
-# brew aliases
-# alias brewup="brew -v update && brew -v upgrade && brew cask upgrade && brew cleanup && brew doctor"
-# alias cask="brew cask"
-# alias bi='brew info'
-# alias bis='brew install'
-# alias ci='brew cask info'
-# alias cis='brew cask install'
-# alias bs="brew search"
-# alias bsd="brew search --desc"
-# alias cus="brew cask uninstall"
-# alias cuz="brew cask zap"
