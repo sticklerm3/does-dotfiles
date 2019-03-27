@@ -1,0 +1,439 @@
+############### BREWFILE BUNDLED ON 3/24/19 ###############
+
+#################### TAPS ####################################
+tap "chrokh/tap"
+tap "homebrew/aliases"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/command-not-found"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "homebrew/test-bot"
+tap "paulgalow/tap"
+tap "sambadevi/powerlevel9k"
+tap "sticklerm3/motley-brue", "git@bitbucket.org:Sticklerm3/motley-brue.git", pin: true
+tap "sticklerm3/pourhouse"
+tap "thoughtbot/formulae"
+tap "vitorgalvao/tiny-scripts"
+
+cask "java8"
+
+#################### SHELL STUFF ############################
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Programmable completion for Bash 4.1+
+brew "bash-completion@2"
+# Collection of small bash scripts for heavy terminal users
+brew "bash-snippets"
+# Fish completion for brew-cask
+brew "brew-cask-completion"
+# Adaptive prompt for bash and zsh shells
+brew "liquidprompt"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Autoformat shell script source code
+brew "shfmt"
+
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+
+# UNIX shell (command interpreter)
+brew "zsh"
+# Embeds a Python interpreter into zsh
+brew "zpython"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Additional completion definitions for zsh
+brew "zsh-completions"
+# Zsh port of Fish shell's history search
+brew "zsh-history-substring-search"
+# Tips, tricks, and examples for zsh
+brew "zsh-lovers"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# Debugger for zsh
+brew "zshdb"
+
+############### GIT & UTILITIES ###########################
+# Distributed revision control system
+brew "git"
+# Small git utilities
+brew "git-extras"
+# AVH edition of git-flow
+brew "git-flow-avh"
+# Git extension for versioning large files
+brew "git-lfs"
+# Push a branch to multiple remotes in one command
+brew "git-multipush"
+# Simple and efficient way to access statistics in git
+brew "git-quick-stats"
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy"
+# File comparison utilities
+brew "diffutils"
+
+############### ALL THE REST #####################
+# Completion for Atom Package Manager
+brew "apm-bash-completion"
+
+# Graphical system information display for macOS
+brew "archey"
+
+# GNU database manager
+brew "gdbm"
+
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
+
+# CLI app for checking the state of your git repositories
+brew "cig"
+
+# Music player with an ncurses based interface
+brew "cmus"
+
+# Dependency Manager for PHP
+brew "composer"
+
+# Utility that creates projects from templates
+brew "cookiecutter"
+
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+
+# Generate documentation for several programming languages
+brew "doxygen"
+
+# Framework for layout and rendering of i18n text
+brew "pango"
+
+# Suite of tools for inspecting disk usage
+brew "duc"
+
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
+
+# Maintain consistent coding style between multiple editors
+brew "editorconfig"
+
+# Library to load and enumerate PKCS#11 modules
+brew "p11-kit"
+
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+
+# GNU Emacs text-editor
+brew "emacs"
+
+# High quality MPEG Audio Layer III (MP3) encoder
+brew "lame"
+
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+
+# Collection of GNU find, xargs, and locate
+brew "findutils"
+
+# Command-line outline and bitmap font editor/converter
+brew "fontforge"
+
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+
+# GitHub Markdown previewer
+brew "grip"
+
+# Convert source code to formatted text with syntax highlighting
+brew "highlight"
+
+# Improved top (interactive process viewer)
+brew "htop"
+
+# Add GitHub support to git on the command-line
+brew "hub"
+
+# ID3 tag editor for MP3 files
+brew "id3ed"
+
+# CLI wrapper for basic network utilities on macOS - ip command
+brew "iproute2mac"
+
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+
+# Bash completion for Launchctl
+brew "launchctl-completion"
+
+# Common error values for all GnuPG components
+brew "libgpg-error"
+
+# Library for Apple Binary- and XML-Property Lists
+brew "libplist"
+
+# C library for playback of module music (MOD, S3M, IT, etc)
+brew "libxmp"
+
+# Rainbows and unicorns in your console!
+brew "lolcat"
+
+# Keep your Mac's application settings in sync
+brew "mackup"
+
+# The mandoc UNIX manpage compiler toolset
+brew "mandoc"
+
+# Mac App Store command-line interface
+brew "mas"
+
+# Styled terminal markdown viewer
+brew "mdv"
+
+# Utility for testing the memory subsystem
+brew "memtester"
+
+# Project documentation with Markdown
+brew "mkdocs"
+
+# Collection of tools that nobody wrote when UNIX was young
+brew "moreutils"
+
+# MP3 technical info viewer and ID3 1.x tag editor
+brew "mp3info"
+
+# Toolbox to manipulate MPEG files
+brew "mpgtx"
+
+# CLI for MySQL with auto-completion and syntax highlighting
+brew "mycli"
+
+# Free (GNU) replacement for the Pico text editor
+brew "nano"
+
+# Utility for managing network connections
+brew "netcat"
+
+# Realtime console network usage monitor
+brew "nload"
+
+# Port scanning utility for large networks
+brew "nmap"
+
+# Platform built on V8 to build network applications
+brew "node"
+
+# Install NodeJS versions
+brew "node-build", link: false
+
+# Network performance measurement tool
+brew "nuttcp"
+
+# Renders an animated, color, ANSI-text loop of the Poptart Cat
+brew "nyancat"
+
+# OpenBSD freely-licensed SSH connectivity tools
+brew "openssh"
+
+# Collection of macOS command-line utilities
+brew "osxutils"
+
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+
+# Python dependency management tool
+brew "pipenv"
+
+# Collection of PostScript document handling utilities
+brew "psutils"
+
+# Monitor data's progress through a pipe
+brew "pv"
+
+# Python implementation of Markdown
+brew "python-markdown"
+
+# Cross-platform application and UI framework
+brew "qt"
+
+# Ruby version manager
+brew "rbenv"
+# Integrate rbenv and bundler
+brew "rbenv-bundle-exec"
+
+# SMART hard drive monitoring
+brew "smartmontools"
+
+# netcat on steroids
+brew "socat"
+
+# Command-line interface for https://speedtest.net bandwidth tests
+brew "speedtest-cli"
+
+# Tool to create intelligent and beautiful documentation
+brew "sphinx-doc"
+
+# Add a public key to a remote machine's authorized_keys file
+brew "ssh-copy-id"
+
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+
+# Manipulate and query tags on Mavericks files
+brew "tag"
+
+# Utility to modify the macOS Accessibility Database (TCC.db)
+brew "tccutil"
+
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
+
+# Multiple terminals in one window
+brew "terminator"
+
+# Convert TeXinfo files to HTML
+brew "texi2html"
+
+# Official documentation format of the GNU project
+brew "texinfo"
+
+# Programatically correct mistyped console commands
+brew "thefuck"
+
+# Lists files that were saved by a backup of the macOS Time Machine
+brew "timedog"
+
+# Simplified and community-driven man pages
+brew "tldr"
+
+# Terminal multiplexer
+brew "tmux"
+
+# Command-line client for Travis CI
+brew "travis"
+
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+
+# Internet file retriever
+brew "wget"
+
+# JavaScript package manager
+brew "yarn"
+
+# Download YouTube videos from the command-line
+brew "youtube-dl"
+
+# Tracks most-used directories to make cd smarter
+brew "z"
+
+################### TAPPED FORMULAE #############################
+# A command line tool to install base16 templates and set themes globally.
+brew "chrokh/tap/base16-manager"
+# Minimal C program and Makefile used for testing Homebrew
+brew "homebrew/test-bot/testbottest"
+# Download HQ album cover art
+brew "paulgalow/tap/albumart-dl"
+# A badass zsh theme with more power than a normal earthling
+brew "sambadevi/powerlevel9k/powerlevel9k"
+# management suite for dotfiles
+brew "thoughtbot/formulae/rcm"
+# Script to show analytics information for casks in the main taps
+brew "vitorgalvao/tiny-scripts/cask-analytics"
+# Script to change label color of files in OS X
+brew "vitorgalvao/tiny-scripts/labelcolor"
+# Script to convert a video or audio file to an iPhone ringtone
+brew "vitorgalvao/tiny-scripts/ringtonemaker"
+# Script to get a strong password by leveraging multiple sources
+brew "vitorgalvao/tiny-scripts/strongpassword"
+
+########################## CASKS ###############################
+cask "advancedcolors"
+cask "alfred"
+cask "atom"
+cask "basictex"
+cask "calibre"
+cask "dash"
+cask "firefox"
+cask "firefox-developer-edition"
+cask "iterm2"
+cask "jetbrains-toolbox"
+cask "little-snitch"
+cask "lockrattler"
+cask "lulu"
+cask "sourcetree"
+cask "taskexplorer"
+cask "vlc"
+cask "whatsyoursign"
+cask "xquartz"
+cask "sticklerm3/pourhouse/alifix"
+cask "sticklerm3/pourhouse/alisma"
+cask "sticklerm3/pourhouse/blowhole"
+cask "sticklerm3/pourhouse/consolation3"
+cask "sticklerm3/pourhouse/delighted"
+cask "sticklerm3/pourhouse/fing-cli"
+cask "sticklerm3/pourhouse/keychaincheck2"
+cask "sticklerm3/pourhouse/unorml"
+cask "sticklerm3/pourhouse/xattred"
+
+####################### FONTS ##############################
+cask "font-3270-nerd-font"
+cask "font-3270-nerd-font-mono"
+cask "font-devicons"
+cask "font-droidsansmono-nerd-font"
+cask "font-droidsansmono-nerd-font-mono"
+cask "font-fantasquesansmono-nerd-font-mono"
+cask "font-hack"
+cask "font-hack-nerd-font"
+cask "font-hack-nerd-font-mono"
+cask "font-hermit-nerd-font-mono"
+cask "font-ibm-plex"
+cask "font-iceberg"
+cask "font-iceland"
+cask "font-material-icons"
+cask "font-meslo-nerd-font"
+cask "font-meslo-nerd-font-mono"
+cask "font-over-the-rainbow"
+cask "font-permanent-marker"
+cask "font-raleway"
+cask "font-raleway-dots"
+cask "font-robotomono-nerd-font"
+cask "font-robotomono-nerd-font-mono"
+cask "font-sharetechmono-nerd-font"
+cask "font-sharetechmono-nerd-font-mono"
+cask "font-source-code-pro"
+cask "font-sourcecodepro-nerd-font"
+cask "font-sourcecodepro-nerd-font-mono"
+cask "font-space-grotesk"
+cask "font-space-mono"
+cask "font-spacemono-nerd-font"
+cask "font-spacemono-nerd-font-mono"
+cask "font-zilla-slab"
+
+####################### QL-PLUGINS ##############################
+cask "qlcolorcode"
+cask "qlmarkdown"
+cask "qlstephen"
+cask "qlvideo"
+
+####################### MAC APP STORE ##############################
+mas "Airmail 3", id: 918858936
+mas "Amphetamine", id: 937984704
+mas "Battery Health 2", id: 1120214373
+mas "DaisyDisk", id: 411643860
+mas "Friendly Streaming", id: 553245401
+mas "Kindle", id: 405399194
+mas "Mactracker", id: 430255202
+mas "MarkEditor", id: 1398414250
+mas "Memory Cleaner", id: 748212890
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Parcel", id: 639968404
+mas "PiPifier", id: 1160374471
+mas "Pixelmator", id: 407963104
+mas "Pocket", id: 568494494
+mas "Remote Mouse", id: 403195710
+mas "Speedtest", id: 1153157709
+mas "Telegram", id: 747648890
+mas "Termius", id: 1176074088
+mas "The Unarchiver", id: 425424353
+mas "Trello", id: 1278508951
