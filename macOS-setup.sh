@@ -13,24 +13,24 @@
 #     THIS CODE IS PROVIDED AS IS/WITH NO WARANTEE! USE AT YOUR OWN RISK      #
 #                                                                             #
 # =========================================================================== #
-echo "Creating an SSH key for you..."
-ssh-keygen -t rsa
-echo "while the xcode-tools install, add this SSH key to github!"
-printf "https://github.com/account/ssh \n"
+# echo "Creating an SSH key for you..."
+# ssh-keygen -t rsa
+# echo "while the xcode-tools install, add this SSH key to github!"
+# printf "https://github.com/account/ssh \n"
 
 # Install XCode CLI tools & Accept agreement
-if ! $(xcode-select -p &>/dev/null); then
-    xcode-select --install &>/dev/null
+if ! xcode-select -p &>/dev/null; then
+  xcode-select --install &>/dev/null
 
-    # Wait until the Xcode Command Line Tools are installed
-    until $(xcode-select -p &>/dev/null); do
-        sleep 5
-    done
+  # Wait until the Xcode Command Line Tools are installed
+  until xcode-select -p &>/dev/null; do
+    sleep 5
+  done
 fi
 
 # Accept the Xcode/iOS license agreement
-if ! $(sudo xcodebuild -license status); then
-    sudo xcodebuild -license accept
+if ! sudo xcodebuild -license status; then
+  sudo xcodebuild -license accept
 fi
 
 # Install and set up Homebrew
@@ -83,8 +83,8 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 echo "on to the dotfiles now!"
 brew install thoughtbot/rcm
 mkdir -p "$HOME"/.dotfiles
-# git clone <dotfiles> "$HOME"/.dotfiles
-# <INSTALL DOTFILES>
+git clone https://github.com/sticklerm3/does-dotfiles.git "$HOME"/.dotfiles
+sh install.sh
 
 echo "now that that's taken care of, lets change the default to zsh!"
 chsh -s "$(brew --prefix)/bin/zsh" "$USER"
