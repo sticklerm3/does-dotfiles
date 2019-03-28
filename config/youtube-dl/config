@@ -1,0 +1,13 @@
+# lines that start with # are comments
+
+# always extract audio
+#-x
+
+# use .netrc config
+# --netrc
+
+# always extract best format
+-f best
+
+# Save all media to directory
+# -o /Volumes/Batdrive/Music/Downloads/%(title)s.%(ext)s

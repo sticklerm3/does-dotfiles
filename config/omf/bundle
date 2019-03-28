@@ -1,0 +1,16 @@
+ 
+package apt
+package brew
+package colorman
+package config
+package osx
+package spark
+package thefuck
+package weather
+theme cyan
+theme graystatus
+theme pure
+theme sashimi
+theme shellder
+theme simple-ass-prompt
+theme zish

@@ -1,0 +1,127 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Dropbox settings and caches
+###########################
+.dropbox
+.dropbox.attr
+.dropbox.cache
+
+.svn
+*~
+*.swp
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+.Trash
+
+# Npm
+*.log
+node_modules
+bower_components
+.pm2
+.node-gyp
+.babel.json
+.yarnrc
+
+# IDEs
+.idea
+.atom
+
+# Fish
+fish/fish_history
+fish/fishd.*
+
+# Misc
+.CFUserTextEncoding
+.docker
+.localized
+*.padl
+
+code/
+.abstract/
+.aws/
+.bash_sessions/
+.blockstack/
+.bundle/
+.cargo/
+.config/
+.cargo/
+.dat-desktop/
+.docker/
+.electron/
+.gem/
+.luna/
+.mix/
+.multirust/
+.node-gyp/
+.now/
+.npm/
+.nvm/
+.opam/
+.pia_manager/
+.pm2/
+.rbenv/
+.rustup/
+.subversion/
+.vscode/
+.vscode-insiders/
+*.pigments-report.json
+
+# Sensitive data
+.bash_history
+.gitconfig.local
+.histfile
+.*.log
+.local/
+.viminfo
+.zcompdump
+.ssh/
+.ssb/
+.Trash/

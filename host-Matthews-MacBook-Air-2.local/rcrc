@@ -1,3 +1,4 @@
 HOSTNAME="Matthews-MacBook-Air-2.local"
-EXCLUDES="README*.md LICENSE .travis.yml"
+EXCLUDES="README*.md LICENSE .travis.yml build/*"
 COPY_ALWAYS="gitignore_global gitconfig gitflow_export"
+UNDOTTED="bin"
