@@ -1,0 +1,28 @@
+#!/bin/sh
+
+###
+# This script was written by @thoughtbot
+###
+
+# Exit if any subcommand fails
+set -e
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NO_COLOR='\033[0m'
+CLEAR_LINE='\r\033[K'
+
+printf "[1/6]🔎   checking dependencies"
+
+if ! command -v node >/dev/null; then
+  printf "${CLEAR_LINE}💀${RED}   You must install node on your system before setup can continue${NO_COLOR}\n"
+  printf "ℹ️   On macOS🍎 you should 'brew install node'\n"
+  exit -1
+fi
+
+if [[ $(node --version) != "v4.6.0" ]]; then
+  printf "${CLEAR_LINE}⚠️${YELLOW}   You are not using a known working version of node.${NO_COLOR}\n"
+  printf "ℹ️   This might not be a problem but if you're having issues, try installing 4.6.0\n"
+  printf "[1/6]🔎   checking dependencies"
+fi

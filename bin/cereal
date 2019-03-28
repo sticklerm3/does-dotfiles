@@ -1,0 +1,4 @@
+#!/bin/bash
+# prints the macs serial number
+
+system_profiler SPHardwareDataType|grep "Serial Number (system)" |awk '{print $4}'

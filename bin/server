@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+LOG_FILE=tmp/server.log
+
+green() { printf "\033[32m${1}\033[0m\n"; }
+yellow() { printf "\033[33m${1}\033[0m\n"; }
+red() { printf "\033[31m${1}\033[0m\n"; }
+
+yellow "Setting up server (may take a while)..."
+
+if ./bin/server-setup "$LOG_FILE"; then
+  green "...success! Starting server, visit http://localhost:3002"
+  echo
+  cd tmp/maitre-d && bundle exec rails server --port 3002
+else
+  red "Oops, something went wrong :/"
+  red "Look in tmp/server.log for the setup log"
+  red "If you have any questions, please ask in the #blog channel"
+fi

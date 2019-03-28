@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+# Exit if any subcommand fails
+set -e
+
+# Log everything to $LOG_FILE
+LOG_FILE="$1"
+exec > "$LOG_FILE" 2>&1
+
+mkdir -p tmp
+cd tmp
+
+# Maitre-d is the blog engine
+# Get the latest Maitre-d
+
+if test -d maitre-d; then
+  cd maitre-d
+  git pull
+else
+  git clone --depth=1 git@github.com:thoughtbot/maitre-d
+  cd maitre-d
+fi
+
+# Check Ruby installation
+rubyversion="$(< .ruby-version)"
+if ! ruby --version | grep -Fq "$rubyversion"; then
+
+  if command -v rbenv > /dev/null; then
+    # install via rbenv
+    printf 'Installing the version of Ruby for this project via rbenv...\n'
+    brew update
+    brew upgrade ruby-build || true
+    rbenv install
+  elif command -v rvm > /dev/null; then
+    # install via RVM
+    printf 'Installing the version of Ruby for this project via RVM...\n'
+    source "$HOME/.rvm/scripts/rvm"
+    rvm install "$rubyversion" && rvm use "$rubyversion"
+  elif command -v ruby-install > /dev/null; then
+    # install via ruby-install
+    printf 'Installing the version of Ruby for this project via ruby-install...\n'
+    ruby-install ruby "$rubyversion" && chruby "$rubyversion"
+  else
+    printf 'You do not have the correct version of Ruby installed.\n'
+  fi
+fi
+
+# Set up Ruby dependencies via Bundler
+gem install bundler --conservative --no-document
+bundle check || bundle install --without test
+
+# Set up Maitre-d ENV variables to point to parent robots folder
+cp .sample.env .env
+echo "LOCAL_POSTS_PATH=../../source/posts/**/*.md" >> .env
+
+# Maitre-d requires a database
+bundle exec rake db:setup
+
+# Add FILEPICKER_API_KEY if not set to the real value
+if ! grep -Fq FILEPICKER_API_KEY=A .env; then
+  heroku join --app maitre-d-staging
+  heroku config:get FILEPICKER_API_KEY --shell --app maitre-d-staging >> .env
+fi
