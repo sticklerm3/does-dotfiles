@@ -2,7 +2,6 @@
 export PATH=$HOME/bin:/usr/local/bin:usr/local/sbin$PATH
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -31,6 +30,11 @@ if [ -e ~/.aliases ]; then
      source ~/.aliases
 fi
 
+# Load the zsh aliases file
+if [ -e ~/.aliases.zsh ]; then
+     source ~/.aliases.zsh
+fi
+
 # Load the exports file
 if [ -e ~/.exports ]; then
      source ~/.exports
@@ -56,14 +60,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
-# Less/Textmate 
-export LESSEDIT='mate -l %lm %f'
-
 # Homebrew editor
 export HOMEBREW_EDITOR=atom
-
-# Path to Docbook package for XML Toolcahin
-export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
 
 PIPENV_VENV_IN_PROJECT=1
 
@@ -237,7 +235,7 @@ autoload -Uz vcs_info
 source $(dirname $(gem which colorls))/tab_complete.sh
 
 # bitbucket shell scripts
-source ~/bin/bitbucket-cli/bitbucket-functions.sh
+# source ~/bin/bitbucket-cli/bitbucket-functions.sh
 
 # GRV-grv is currently an alias used by oh-my-zsh
 unalias grv
