@@ -1,0 +1,764 @@
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:usr/local/sbin$PATH
+export PATH="/usr/local/sbin:$PATH"
+# export PATH="/usr/local/opt/ncurses/bin:$PATH"
+# export PATH="$HOME/.ndenv/bin:$PATH"
+
+# zsh brew completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
+# Load the Functions file
+if [ -e ~/.functions ]; then
+     source ~/.functions
+fi
+
+# Load the aliases file
+if [ -e ~/.aliases ]; then
+     source ~/.aliases
+fi
+
+# Load the exports file
+if [ -e ~/.exports ]; then
+     source ~/.exports
+fi
+
+# Load the local shell env file
+if [ -e ~/.shell_env_local ]; then
+     source ~/.shell_env_local
+fi
+
+# Don’t clear the screen after quitting a manual page.
+# export MANPAGER='less -X';
+
+# added for tmux
+export TERM="xterm-256color"
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# ZSH_THEME="robbyrussel"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+CASE_SENSITIVE="false"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  battery
+  colored-man-pages
+  gem
+  git
+  git-extras
+  iterm2
+  noreallyjustfuckingstopalready
+  osx
+  themes
+  zsh-autosuggestions
+  zsh-better-npm-completion
+  zsh-completions
+  zsh-navigation-tools
+  zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nano'
+else
+  export EDITOR='atom'
+fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# rbenv
+# eval "$(rbenv init -)"
+
+# wtf
+# eval $(thefuck --alias)
+
+# node env
+# eval "$(ndenv init -)"
+
+# Homebrew env
+eval $(brew shellenv)
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# iterm2 integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Completion
+autoload -U compinit && compinit
+
+# export NVM_DIR="$HOME/.nvm"
+#   . "/usr/local/opt/nvm/nvm.sh"
+
+
+# fish like syntax highlights, autosuggestions, and hist search
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# history
+SAVEHIST=1000
+HISTSIZE=1000
+HISTFILE='$HOME/.zsh_history'
+
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+
+
+#================================================================================
+#================================================================================
+# Powelevel9k Config Stuff
+#================================================================================
+#================================================================================
+#---------------------------------------
+# Special Segment Colors
+#---------------------------------------
+#
+# Some segments have state. For example, if you become root, or modify a file in your version control system, segments
+# try to reflect this fact by changing the color. For these segments you still can modify the color to your needs by
+# setting a variable like POWERLEVEL9K_<name-of-segment>_<state>_BACKGROUND. Segments with state are:
+#
+#     SEGMENT           STATES
+#     battery           LOW, CHARGING, CHARGED, DISCONNECTED
+#     context           DEFAULT, ROOT
+#     dir               HOME, HOME_SUBFOLDER, DEFAULT
+#     load              CRITICAL, WARNING, DEFAULT
+#     rspec_stats       STATS_GOOD, STATS_AVG, STATS_BAD
+#     status            ERROR, OK (note: only, if verbose is not false)
+#     symfony_tests     TESTS_GOOD, TESTS_AVG, TESTS_BAD
+#     vcs               CLEAN, UNTRACKED, MODIFIED
+#     vi_mode           NORMAL, INSERT
+#
+# Format:
+#     POWERLEVEL9K_<segment>_<state>_FOREGROUND=""
+#     POWERLEVEL9K_<segment>_<state>_BACKGROUND=""
+#
+# Example:
+#     POWERLEVEL9K_VCS_CLEAN_FOREGROUND="blue"
+#     POWERLEVEL9K_VCS_CLEAN_BACKGROUND="black"
+#     POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND="yellow"
+#     POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND="black"
+#     POWERLEVEL9K_VCS_MODIFIED_FOREGROUND="red"
+#     POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="black"
+#
+#     # Advanced `vi_mode` color customization
+#     POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND="teal"
+#
+
+#---------------------------------------
+# Visual Identifiers For Segments
+#---------------------------------------
+#
+# Most segment have a so called "visual identifier" which is an icon or string that serves as a "logo" for the
+# segment. This identifier is displayed on the left side for left configured segments and on the right for right
+# configured segments.
+#
+# Let's assume you have configured the load segment. This segment can have different states (CRITICAL, WARNING and
+# NORMAL). Now, we want to display the segment in black and white and colorize only the visual identifier.
+#
+# Format:
+#     POWERLEVEL9K_<segment>_<state>_VISUAL_IDENTIFIER_COLOR=""
+#
+# Example:
+#     # Segment in black and white
+#     POWERLEVEL9K_LOAD_CRITICAL_BACKGROUND="black"
+#     POWERLEVEL9K_LOAD_CRITICAL_FOREGROUND="white"
+#     POWERLEVEL9K_LOAD_WARNING_BACKGROUND="black"
+#     POWERLEVEL9K_LOAD_WARNING_FOREGROUND="white"
+#     POWERLEVEL9K_LOAD_NORMAL_BACKGROUND="black"
+#     POWERLEVEL9K_LOAD_NORMAL_FOREGROUND="white"
+#     # Colorize only the visual identifier
+#     POWERLEVEL9K_LOAD_CRITICAL_VISUAL_IDENTIFIER_COLOR="red"
+#     POWERLEVEL9K_LOAD_WARNING_VISUAL_IDENTIFIER_COLOR="yellow"
+#     POWERLEVEL9K_LOAD_NORMAL_VISUAL_IDENTIFIER_COLOR="green"
+#
+
+#---------------------------------------
+# Glue Segments Together
+#---------------------------------------
+#
+# It is possible to display two segments as one, by adding _joined to your segment definition. The segments are always
+# joined with their predecessor, so be sure that this is always visible. Otherwise you may get unwanted results. For
+# example, if you want to join status and background_jobs in your right prompt together, set:
+#
+#     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs_joined)
+#
+# This works with every segment, even with custom ones and with conditional ones.
+#
+
+#=======================================
+# GENERAL SETTINGS
+#=======================================
+# Uncomment this line for ZIM installations
+#POWERLEVEL9K_INSTALLATION_PATH=~/.zim/modules/prompt/external-themes/powerlevel9k/powerlevel9k.zsh-theme
+
+# Uncomment this line for Antigen installations
+#POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
+
+#=======================================
+# FONT SUPPORT
+#=======================================
+
+# NOTE:
+# To use the features below, you have to install the font and make it the default font in your terminal emulator.
+
+# For installation instructions for Powerline Fonts
+# See: https://powerline.readthedocs.org/en/latest/installation/linux.html#fonts-installation
+
+# Uncomment if you are using Awesome Powerline Font, and you prefer flat segment transitions
+#POWERLEVEL9K_MODE="flat"
+
+# Uncomment if you are using Awesome Terminal Font
+# See: https://github.com/gabrielelana/awesome-terminal-fonts
+#POWERLEVEL9K_MODE="awesome-fontconfig"
+
+# Uncomment if you are using Awesome Patched Font
+# See: https://github.com/gabrielelana/awesome-terminal-fonts/tree/patching-strategy/patched
+#POWERLEVEL9K_MODE="awesome-flat"
+
+# Uncomment if you are using a Nerd supported font
+# See: https://github.com/ryanoasis/nerd-fonts
+#POWERLEVEL9K_MODE="nerdfont-fontconfig"
+
+#=======================================
+# PROMPT CONFIGURATION
+#=======================================
+
+# multiline prompt
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true						# double line prompt
+#POWERLEVEL9K_RPROMPT_ON_NEWLINE=true						# place the right prompt on second line
+#POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+#POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX=""
+
+#POWERLEVEL9K_PROMPT_ADD_NEWLINE=true						# new line before prompt
+#POWERLEVEL9K_DISABLE_RPROMPT=true							# disable the right prompt
+
+# segment/sub segment separators
+#POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\uE0B0'				# 
+#POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\uE0B2'				# 
+#POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='\uE0B1'			# 
+#POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='\uE0B3'			# 
+
+
+#=======================================
+# MY CUSTOM SEGMENTS
+#=======================================
+POWERLEVEL9K_CUSTOM_ZSH_WEATHER="~/.zsh_weather"
+POWERLEVEL9K_CUSTOM_ZSH_WEATHER_FOREGROUND="black"
+POWERLEVEL9K_CUSTOM_ZSH_WEATHER_BACKGROUND="grey53"
+
+#=======================================
+# COLOR SCHEMES
+#=======================================
+
+POWERLEVEL9K_COLOR_SCHEME="dark"	# "light" or "dark"
+
+
+#=======================================
+# MY THEME OVERRIDES: COLORS
+#=======================================
+
+#---------------------------------------
+# SYSTEM STATUS SEGMENTS
+#---------------------------------------
+
+# *****  background_jobs  *****
+#POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND="grey27"
+#POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND="129"
+#POWERLEVEL9K_BACKGROUND_VISUAL_IDENTIFIER_COLOR="grey23"
+
+# *****  battery  *****
+#POWERLEVEL9K_BATTERY_CHARGED_BACKGROUND=""
+#POWERLEVEL9K_BATTERY_CHARGED_FOREGROUND=""
+#POWERLEVEL9K_BATTERY_CHARGED_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_BATTERY_CHARGING_BACKGROUND=""
+#POWERLEVEL9K_BATTERY_CHARGING_FOREGROUND=""
+#POWERLEVEL9K_BATTERY_CHARGING_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND=""
+#POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=""
+#POWERLEVEL9K_BATTERY_DISCONNECTED_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_BATTERY_LOW_BACKGROUND=""
+#POWERLEVEL9K_BATTERY_LOW_FOREGROUND=""
+#POWERLEVEL9K_BATTERY_LOW_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  context  *****
+#POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND=""
+#POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND=""
+#POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND=""
+#POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=""
+#POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  date  *****
+#POWERLEVEL9K_DATE_BACKGROUND=""
+#POWERLEVEL9K_DATE_FOREGROUND=""
+#POWERLEVEL9K_DATE_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  dir  *****
+#POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="white"
+#POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="black"
+#POWERLEVEL9K_DIR_DEFAULT_VISUAL_IDENTIFIER_COLOR="black"
+
+POWERLEVEL9K_DIR_HOME_BACKGROUND="black"
+POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
+POWERLEVEL9K_DIR_HOME_VISUAL_IDENTIFIER_COLOR="red"
+
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="black"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_VISUAL_IDENTIFIER_COLOR="red"
+
+# *****  dir_writeable  *****
+#POWERLEVEL9K_DIR_WRITEABLE_BACKGROUND=""
+#POWERLEVEL9K_DIR_WRITEABLE_FOREGROUND=""
+#POWERLEVEL9K_DIR_WRITEABLE_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  disk_usage  *****
+#POWERLEVEL9K_DISK_USAGE_BACKGROUND=""
+#POWERLEVEL9K_DISK_USAGE_FOREGROUND=""
+#POWERLEVEL9K_DISK_USAGE_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  history  *****
+#POWERLEVEL9K_HISTORY_BACKGROUND=""
+#POWERLEVEL9K_HISTORY_FOREGROUND=""
+#POWERLEVEL9K_HISTORY_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  ip  *****
+#POWERLEVEL9K_IP_BACKGROUND=""
+#POWERLEVEL9K_IP_FOREGROUND=""
+#POWERLEVEL9K_IP_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  load  *****
+#POWERLEVEL9K_LOAD_DEFAULT_BACKGROUND=""
+#POWERLEVEL9K_LOAD_DEFAULT_FOREGROUND=""
+#POWERLEVEL9K_LOAD_DEFAULT_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_LOAD_WARNING_BACKGROUND=""
+#POWERLEVEL9K_LOAD_WARNING_FOREGROUND=""
+#POWERLEVEL9K_LOAD_WARNING_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_LOAD_CRITICAL_BACKGROUND=""
+#POWERLEVEL9K_LOAD_CRITICAL_FOREGROUND=""
+#POWERLEVEL9K_LOAD_CRITICAL_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  os_icon  *****
+#POWERLEVEL9K_OS_ICON_BACKGROUND="black"
+#POWERLEVEL9K_OS_ICON_FOREGROUND="white"
+#POWERLEVEL9K_OS_ICON_VISUAL_IDENTIFIER_COLOR="green"
+
+# *****  public_ip  *****
+#POWERLEVEL9K_PUBLIC_IP_BACKGROUND=""
+#POWERLEVEL9K_PUBLIC_IP_FOREGROUND=""
+#POWERLEVEL9K_PUBLIC_IP_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  ram  *****
+#POWERLEVEL9K_RAM_BACKGROUND=""
+#POWERLEVEL9K_RAM_FOREGROUND=""
+#POWERLEVEL9K_RAM_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  ssh  *****
+#POWERLEVEL9K_SSH_BACKGROUND=""
+#POWERLEVEL9K_SSH_FOREGROUND=""
+#POWERLEVEL9K_SSH_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  status  *****
+#POWERLEVEL9K_STATUS_ERROR_BACKGROUND=""
+#POWERLEVEL9K_STATUS_ERROR_FOREGROUND=""
+#POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_STATUS_OK_BACKGROUND=""				# (note: only, if verbose is true)
+#POWERLEVEL9K_STATUS_OK_FOREGROUND=""				# (note: only, if verbose is true)
+#POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_COLOR=""		# (note: only, if verbose is true)
+
+# *****  swap  *****
+#POWERLEVEL9K_SWAP_BACKGROUND=""
+#POWERLEVEL9K_SWAP_FOREGROUND=""
+#POWERLEVEL9K_SWAP_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  time  *****
+#POWERLEVEL9K_TIME_BACKGROUND=""
+#POWERLEVEL9K_TIME_FOREGROUND=""
+#POWERLEVEL9K_TIME_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  todo  *****
+#POWERLEVEL9K_TODO_BACKGROUND=""
+#POWERLEVEL9K_TODO_FOREGROUND=""
+#POWERLEVEL9K_TODO_VISUAL_IDENTIFIER_COLOR=""
+
+# *****  vi_mode  *****
+#POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND=""
+#POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND=""
+#POWERLEVEL9K_VI_MODE_INSERT_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND=""
+#POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND=""
+#POWERLEVEL9K_VI_MODE_NORMAL_VISUAL_IDENTIFIER_COLOR=""
+
+#---------------------------------------
+# DEVELOPMENT ENVIRONMENT SEGMENTS
+#---------------------------------------
+
+# *****  vcs  *****
+#POWERLEVEL9K_VCS_CLEAN_BACKGROUND=""
+#POWERLEVEL9K_VCS_CLEAN_FOREGROUND=""
+#POWERLEVEL9K_VCS_CLEAN_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=""
+#POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=""
+#POWERLEVEL9K_VCS_UNTRACKED_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=""
+#POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=""
+#POWERLEVEL9K_VCS_MODIFIED_VISUAL_IDENTIFIER_COLOR=""
+
+#---------------------------------------
+# PHP Segments
+#---------------------------------------
+
+# *****  symfony_tests  *****
+#POWERLEVEL9K_SYMFONY_TESTS_AVG_BACKGROUND=""
+#POWERLEVEL9K_SYMFONY_TESTS_AVG_FOREGROUND=""
+#POWERLEVEL9K_SYMFONY_TESTS_AVG_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_SYMFONY_TESTS_BAD_BACKGROUND=""
+#POWERLEVEL9K_SYMFONY_TESTS_BAD_FOREGROUND=""
+#POWERLEVEL9K_SYMFONY_TESTS_BAD_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_SYMFONY_TESTS_GOOD_BACKGROUND=""
+#POWERLEVEL9K_SYMFONY_TESTS_GOOD_FOREGROUND=""
+#POWERLEVEL9K_SYMFONY_TESTS_GOOD_VISUAL_IDENTIFIER_COLOR=""
+
+#---------------------------------------
+# Python Segments
+#---------------------------------------
+
+# *****  anaconda  *****
+
+#POWERLEVEL9K_ANACONDA_BACKGROUND=""
+#POWERLEVEL9K_ANACONDA_FOREGROUND=""		# Note that you can modify the _FOREGROUND color without
+	    					# affecting the icon color.
+#POWERLEVEL9K_ANACONDA_VISUAL_IDENTIFIER_COLOR=""
+
+#---------------------------------------
+# Ruby Segments
+#---------------------------------------
+
+# *****  rspec_stats  *****
+#POWERLEVEL9K_RSPEC_STATS_GOOD_BACKGROUND=""
+#POWERLEVEL9K_RSPEC_STATS_GOOD_FOREGROUND=""
+#POWERLEVEL9K_RSPEC_STATS_GOOD_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_RSPEC_STATS_AVG_BACKGROUND=""
+#POWERLEVEL9K_RSPEC_STATS_AVG_FOREGROUND=""
+#POWERLEVEL9K_RSPEC_STATS_AVG_VISUAL_IDENTIFIER_COLOR=""
+
+#POWERLEVEL9K_RSPEC_STATS_BAD_BACKGROUND=""
+#POWERLEVEL9K_RSPEC_STATS_BAD_FOREGROUND=""
+#POWERLEVEL9K_RSPEC_STATS_BAD_VISUAL_IDENTIFIER_COLOR=""
+
+#---------------------------------------
+# OTHER SEGMENTS
+#---------------------------------------
+
+# *****  command_execution_time  *****
+#POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=""
+#POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=""
+#POWERLEVEL9K_COMMAND_EXECUTION_TIME_VISUAL_IDENTIFIER_COLOR=""
+
+#---------------------------------------
+# My Custom Segments
+#---------------------------------------
+
+# *******iTunes now playing*********#####
+POWERLEVEL9K_CUSTOM_NOW_PLAYING='~/.nowplaying'
+POWERLEVEL9K_CUSTOM_NOW_PLAYING_BACKGROUND='lightslategrey'
+POWERLEVEL9K_CUSTOM_NOW_PLAYING_FOREGROUND='greenyellow'
+POWERLEVEL9K_CUSTOM_NOW_PLAYING_ICON="\ufb75"
+
+#Get WIFI info
+POWERLEVEL9K_CUSTOM_ZSH_WIFI_SIGNAL="~/.zsh_wifi_signal"
+POWERLEVEL9K_CUSTOM_ZSH_WIFI_SIGNAL_BACKGROUND="mediumpurple4"
+POWERLEVEL9K_CUSTOM_ZSH_WIFI_SIGNAL_FOREGROUND="grey37"
+POWERLEVEL9K_CUSTOM_ZSH_WIFI_SIGNAL_ICON="\ufaa8"
+
+#=======================================
+# MY THEME OVERRIDES: ICONS
+#=======================================
+# use "get_icon_names" to see all icons
+
+# *****  Separators and Icons  *****
+#POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=""
+#POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=""
+#POWERLEVEL9K_LEFT_SEGMENT_END_SEPARATOR=""
+#POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=""
+#POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=""
+
+# *****  General Icons  *****
+#POWERLEVEL9K_OK_ICON=""
+#POWERLEVEL9K_FAIL_ICON=""
+#POWERLEVEL9K_CARRIAGE_RETURN_ICON=""
+#POWERLEVEL9K_TODO_ICON=""
+
+#---------------------------------------
+#SYSTEM STATUS SEGMENTS
+#---------------------------------------
+
+# *****  background_jobs  *****
+#POWERLEVEL9K_BACKGROUND_JOBS_ICON=""
+
+# *****  battery  *****
+#POWERLEVEL9K_BATTERY_ICON=""
+
+# *****  date  *****
+#POWERLEVEL9K_DATE_ICON=""
+
+# *****  dir  *****
+POWERLEVEL9K_HOME_ICON="\uF1D1"
+#POWERLEVEL9K_HOME_SUB_ICON=""
+#POWERLEVEL9K_FOLDER_ICON=""
+
+# *****  dir_writeable  *****
+#POWERLEVEL9K_LOCK_ICON=""
+
+# *****  disk_usage *****
+#POWERLEVEL9K_DISK_ICON=""
+
+# *****  history  *****
+#POWERLEVEL9K_HISTORY_ICON=""
+
+# *****  ip  *****
+#POWERLEVEL9K_NETWORK_ICON=""
+
+# *****  load  *****
+#POWERLEVEL9K_LOAD_ICON=""
+
+# *****  os_icon  *****
+#POWERLEVEL9K_APPLE_ICON="\uf535"
+#POWERLEVEL9K_FREEBSD_ICON=""
+#POWERLEVEL9K_LINUX_ICON=""
+#POWERLEVEL9K_SUNOS_ICON=""
+
+# *****  public_ip  *****
+#POWERLEVEL9K_PUBLIC_IP_ICON=""
+
+# *****  ram  *****
+#POWERLEVEL9K_RAM_ICON=""
+
+# *****  root_indicator  *****
+#POWERLEVEL9K_ROOT_ICON=""
+
+# *****  ssh  *****
+#POWERLEVEL9K_SSH_ICON=""
+
+# *****  swap  *****
+#POWERLEVEL9K_SWAP_ICON=""
+
+# *****  time  *****
+#POWERLEVEL9K_TIME_ICON=""
+
+# *****  todo  *****
+#POWERLEVEL9K_TODO_ICON=""
+
+#---------------------------------------
+# Development Environment Segments
+#---------------------------------------
+
+#POWERLEVEL9K_VCS_GIT_ICON=""
+#POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=""
+#POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
+#POWERLEVEL9K_VCS_GIT_GITLAB_ICON=""
+
+#POWERLEVEL9K_VCS_HG_ICON=""
+#POWERLEVEL9K_VCS_SVN_ICON=""
+
+#POWERLEVEL9K_VCS_BOOKMARK_ICON=""
+#POWERLEVEL9K_VCS_BRANCH_ICON=""
+#POWERLEVEL9K_VCS_COMMIT_ICON=""
+#POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=""
+#POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=""
+#POWERLEVEL9K_VCS_REMOTE_BRANCH_ICON=""
+#POWERLEVEL9K_VCS_STAGED_ICON=""
+#POWERLEVEL9K_VCS_STASH_ICON=""
+#POWERLEVEL9K_VCS_TAG_ICON=""
+#POWERLEVEL9K_VCS_UNSTAGED_ICON=""
+#POWERLEVEL9K_VCS_UNTRACKED_ICON=""
+
+#---------------------------------------
+# Javascript / Node.js Segments
+#---------------------------------------
+
+#POWERLEVEL9K_NODE_ICON=""
+
+#---------------------------------------
+# PHP Segments
+#---------------------------------------
+
+# *****  symfony_tests  *****
+#POWERLEVEL9K_SYMFONY_ICON=""
+#POWERLEVEL9K_TEST_ICON=""									# this icon is used for both symfony2_test and rspec_stats
+
+#---------------------------------------
+# Python Segments
+#---------------------------------------
+
+#POWERLEVEL9K_PYTHON_ICON=""
+
+#---------------------------------------
+# Ruby Segments
+#---------------------------------------
+
+#POWERLEVEL9K_RUBY_ICON=""
+
+# *****  rspec_stats  *****
+#POWERLEVEL9K_TEST_ICON=""									# this icon is used for both symfony2_test and rspec_stats
+
+#---------------------------------------
+# Rust Segments
+#---------------------------------------
+
+#POWERLEVEL9K_RUST_ICON=""
+
+#---------------------------------------
+# Swift Segments
+#---------------------------------------
+
+#POWERLEVEL9K_SWIFT_ICON=""
+
+#---------------------------------------
+# AWS Segments
+#---------------------------------------
+
+# *****  aws  *****
+#POWERLEVEL9K_AWS_ICON=""
+#POWERLEVEL9K_AWS_EB_ICON=""
+
+#---------------------------------------
+# Docker Segments
+#---------------------------------------
+
+# *****  docker_machine  *****
+#POWERLEVEL9K_SERVER_ICON=""
+
+#---------------------------------------
+# OTHER SEGMENTS
+#---------------------------------------
+
+# *****  execution_time  *****
+#POWERLEVEL9K_EXECUTION_TIME_ICON=""
+
+#=======================================
+# PROMPT CUSTOMIZATION
+#=======================================
+# Choose which segments to display in your prompt
+
+# Segment list for left prompt
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv vcs)
+# Segment list for right prompt
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+
+# You can also use different prompts in different environments, e.g. for TMUX, you might use
+#if [[ "${TERM}" =~ "tmux" || "${TERM}" =~ "screen" ]]; then
+#	# Segment list for left prompt
+#	POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir_writable dir background_jobs command_execution_time vi_mode)
+#	# Segment list for right prompt
+#	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs rbenv todo)
+#else
+#	# Segment list for left prompt
+#	POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir_writable dir background_jobs command_execution_time vi_mode)
+#	# Segment list for right prompt
+#	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs rbenv todo date time battery)
+#fi
+
+POWERLEVEL9K_MODE='nerdfont-complete'
+
+#================================================================================
+# ******************OLD/WORKING CURRENTLY-PROMPT******************
+#================================================================================
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(custom_now_playing custom_zsh_wifi_signal time)
+
+#DEFAULT_USER=Matthew
+# Sets home icon to Awesome Fortress
+#POWERLEVEL9K_HOME_ICON="\uF286" #
+# Sets $USER icon to Empire logo
+# POWERLEVEL9K_USER_ICON="\uF1D1"
+
+
+#=======================================
+# LOADING POWERLEVEL9K
+#=======================================
+
+# Option 1: Install for Oh-My-ZSH
+# $ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# Option 2: Install with homebrew:
+# $ brew tap sambadevi/powerlevel9k
+# $ brew install sambadevi/powerlevel9k/powerlevel9k
+# then uncomment the following line and reload your shell!
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme

@@ -1,0 +1,68 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "sambadevi/powerlevel9k"
+tap "sticklerm3/pourhouse"
+tap "thoughtbot/formulae"
+# Completion for Atom Package Manager
+brew "apm-bash-completion"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Programmable completion for Bash 4.1+
+brew "bash-completion@2"
+# Fish completion for brew-cask
+brew "brew-cask-completion"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Fish-like front end for ZSH
+brew "fizsh"
+# Bash completion for gem
+brew "gem-completion"
+# Distributed revision control system
+brew "git"
+# Git extension for versioning large files
+brew "git-lfs"
+# Keep your Mac's application settings in sync
+brew "mackup"
+# Mac App Store command-line interface
+brew "mas"
+# Build native command-line applications for Linux, MacOS, and Windows
+brew "mruby-cli"
+# Free (GNU) replacement for the Pico text editor
+brew "nano"
+# Collection of macOS command-line utilities
+brew "osxutils"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Command-line interface for https://speedtest.net bandwidth tests
+brew "speedtest-cli"
+# Download YouTube videos from the command-line
+brew "youtube-dl"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Additional completion definitions for zsh
+brew "zsh-completions"
+# Tips, tricks, and examples for zsh
+brew "zsh-lovers"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# A badass zsh theme with more power than a normal earthling
+brew "sambadevi/powerlevel9k/powerlevel9k"
+# management suite for dotfiles
+brew "thoughtbot/formulae/rcm"
+cask "alfred"
+cask "atom"
+cask "daisydisk"
+cask "font-hack-nerd-font"
+cask "font-hack-nerd-font-mono"
+cask "font-ibm-plex"
+cask "font-spacemono-nerd-font"
+cask "font-spacemono-nerd-font-mono"
+cask "hyper"
+cask "iterm2"
+cask "lockrattler"
+cask "onyx"
+cask "sourcetree"
