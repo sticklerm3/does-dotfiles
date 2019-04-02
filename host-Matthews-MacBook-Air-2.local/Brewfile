@@ -1,6 +1,10 @@
-############### BREWFILE BUNDLED ON 3/24/19 ###############
-
-#################### TAPS ####################################
+####################### BREWFILE BUNDLED ON 3/29/19 ############################
+# Compiled with: brew bundle dump --global --describe (--force)
+# Install with: brew bundle install --verbose --global
+# Compare with current packages & casks with: brew bundle check --global --verbose
+# "Dry-run" cleanp: brew bundle cleanup --global
+# Actually uninstall/prune with: brew bundle cleanup --global --force
+################################ TAPS ##########################################
 tap "chrokh/tap"
 tap "homebrew/aliases"
 tap "homebrew/bundle"
@@ -11,6 +15,7 @@ tap "homebrew/command-not-found"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/test-bot"
+tap "martido/brew-graph"
 tap "paulgalow/tap"
 tap "sambadevi/powerlevel9k"
 tap "sticklerm3/motley-brue", "git@bitbucket.org:Sticklerm3/motley-brue.git", pin: true
@@ -20,7 +25,7 @@ tap "vitorgalvao/tiny-scripts"
 
 cask "java8"
 
-#################### SHELL STUFF ############################
+########################### SHELL STUFF ########################################
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 4.1+
@@ -56,7 +61,7 @@ brew "zsh-syntax-highlighting"
 # Debugger for zsh
 brew "zshdb"
 
-############### GIT & UTILITIES ###########################
+######################### GIT & UTILITIES ######################################
 # Distributed revision control system
 brew "git"
 # Small git utilities
@@ -74,7 +79,7 @@ brew "diff-so-fancy"
 # File comparison utilities
 brew "diffutils"
 
-############### ALL THE REST #####################
+############################# ALL THE REST #####################################
 # Completion for Atom Package Manager
 brew "apm-bash-completion"
 
@@ -174,6 +179,8 @@ brew "libplist"
 # C library for playback of module music (MOD, S3M, IT, etc)
 brew "libxmp"
 
+brew "libyaml"
+
 # Rainbows and unicorns in your console!
 brew "lolcat"
 
@@ -216,9 +223,6 @@ brew "netcat"
 # Realtime console network usage monitor
 brew "nload"
 
-# Port scanning utility for large networks
-brew "nmap"
-
 # Platform built on V8 to build network applications
 brew "node"
 
@@ -257,8 +261,12 @@ brew "qt"
 
 # Ruby version manager
 brew "rbenv"
+
 # Integrate rbenv and bundler
 brew "rbenv-bundle-exec"
+
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 
 # SMART hard drive monitoring
 brew "smartmontools"
@@ -286,9 +294,6 @@ brew "tccutil"
 
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
-
-# Multiple terminals in one window
-brew "terminator"
 
 # Convert TeXinfo files to HTML
 brew "texi2html"
@@ -326,11 +331,13 @@ brew "youtube-dl"
 # Tracks most-used directories to make cd smarter
 brew "z"
 
-################### TAPPED FORMULAE #############################
+########################### TAPPED FORMULAE ####################################
 # A command line tool to install base16 templates and set themes globally.
 brew "chrokh/tap/base16-manager"
 # Minimal C program and Makefile used for testing Homebrew
 brew "homebrew/test-bot/testbottest"
+# display homebrew dependencies as graph
+brew "martido/brew-graph/brew-graph"
 # Download HQ album cover art
 brew "paulgalow/tap/albumart-dl"
 # A badass zsh theme with more power than a normal earthling
@@ -346,20 +353,24 @@ brew "vitorgalvao/tiny-scripts/ringtonemaker"
 # Script to get a strong password by leveraging multiple sources
 brew "vitorgalvao/tiny-scripts/strongpassword"
 
-########################## CASKS ###############################
+################################### CASKS ######################################
 cask "advancedcolors"
 cask "alfred"
 cask "atom"
 cask "basictex"
+cask "blockblock"
 cask "calibre"
 cask "dash"
 cask "firefox"
 cask "firefox-developer-edition"
+cask "imageoptim"
 cask "iterm2"
 cask "jetbrains-toolbox"
+cask "knockknock"
 cask "little-snitch"
 cask "lockrattler"
 cask "lulu"
+cask "reikey"
 cask "sourcetree"
 cask "taskexplorer"
 cask "vlc"
@@ -372,10 +383,11 @@ cask "sticklerm3/pourhouse/consolation3"
 cask "sticklerm3/pourhouse/delighted"
 cask "sticklerm3/pourhouse/fing-cli"
 cask "sticklerm3/pourhouse/keychaincheck2"
+cask "sticklerm3/pourhouse/t2m2"
 cask "sticklerm3/pourhouse/unorml"
 cask "sticklerm3/pourhouse/xattred"
 
-####################### FONTS ##############################
+################################# FONTS ########################################
 cask "font-3270-nerd-font"
 cask "font-3270-nerd-font-mono"
 cask "font-devicons"
@@ -392,12 +404,14 @@ cask "font-iceland"
 cask "font-material-icons"
 cask "font-meslo-nerd-font"
 cask "font-meslo-nerd-font-mono"
+cask "font-noto-sans-egyptian-hieroglyphs"
 cask "font-over-the-rainbow"
 cask "font-permanent-marker"
 cask "font-raleway"
 cask "font-raleway-dots"
 cask "font-robotomono-nerd-font"
 cask "font-robotomono-nerd-font-mono"
+cask "font-rubik"
 cask "font-sharetechmono-nerd-font"
 cask "font-sharetechmono-nerd-font-mono"
 cask "font-source-code-pro"
@@ -409,13 +423,13 @@ cask "font-spacemono-nerd-font"
 cask "font-spacemono-nerd-font-mono"
 cask "font-zilla-slab"
 
-####################### QL-PLUGINS ##############################
+############################### QL-PLUGINS #####################################
 cask "qlcolorcode"
 cask "qlmarkdown"
 cask "qlstephen"
 cask "qlvideo"
 
-####################### MAC APP STORE ##############################
+############################## MAC APP STORE ###################################
 mas "Airmail 3", id: 918858936
 mas "Amphetamine", id: 937984704
 mas "Battery Health 2", id: 1120214373
@@ -426,7 +440,7 @@ mas "Mactracker", id: 430255202
 mas "MarkEditor", id: 1398414250
 mas "Memory Cleaner", id: 748212890
 mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
+# mas "Pages", id: 409201541
 mas "Parcel", id: 639968404
 mas "PiPifier", id: 1160374471
 mas "Pixelmator", id: 407963104
