@@ -9,7 +9,7 @@ alias bye=exit
 alias ls="colorls"
 # alias cls="colorls"
 # alias lsa="colorls -lA"
-alias lc="colorls -lA --sd"
+# alias lc="colorls -lA --sd"
 
 # Equality 🏳️‍🌈
 alias herstory='history'
@@ -29,6 +29,7 @@ alias pkt="pocket-cli"
 alias pct="pocket-cli"
 alias b16="base16-manager"
 alias rbenvdr="curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash"
+alias sc="shortcuts"
 alias shrtct="shortcuts"
 
 # Objective See (use 'foo -h' for more info on each)
