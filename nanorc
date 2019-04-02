@@ -162,7 +162,7 @@ set regexp
 # set smarthome
 
 ## Use smooth scrolling as the default.
- set smooth
+set smooth
 
 ## Enable soft line wrapping (AKA full line display).
 set softwrap
@@ -200,16 +200,18 @@ set tabsize 4
 ## characters as parts of words.
 # set wordbounds
 
-include ~/.nano/dot.nanorc
-include ~/.nano/git.nanorc
+# install with git clone git@github.com:scopatz/nanorc.git ~/.nano 
+include ~/.nano/cmake.nanorc
 include ~/.nano/coffeescript.nanorc
 include ~/.nano/colortest.nanorc
 include ~/.nano/conf.nanorc
 include ~/.nano/csh.nanorc
 include ~/.nano/csharp.nanorc
 include ~/.nano/css.nanorc
+include ~/.nano/csv.nanorc
 include ~/.nano/dot.nanorc
 include ~/.nano/dotenv.nanorc
+include ~/.nano/etc-hosts.nanorc
 include ~/.nano/fish.nanorc
 include ~/.nano/git.nanorc
 include ~/.nano/gitcommit.nanorc
@@ -217,21 +219,27 @@ include ~/.nano/go.nanorc
 include ~/.nano/groff.nanorc
 include ~/.nano/html.nanorc
 include ~/.nano/html.j2.nanorc
+include ~/.nano/ini.nanorc
 include ~/.nano/java.nanorc
 include ~/.nano/javascript.nanorc
 include ~/.nano/js.nanorc
 include ~/.nano/json.nanorc
+include ~/.nano/keymap.nanorc
+include ~/.nano/makefile.nanorc
 include ~/.nano/man.nanorc
 include ~/.nano/markdown.nanorc
+include ~/.nano/nanorc.nanorc
 include ~/.nano/perl.nanorc
+include ~/.nano/python.nanorc
 include ~/.nano/ruby.nanorc
 include ~/.nano/sh.nanorc
+include ~/.nano/svn.nanorc
 include ~/.nano/systemd.nanorc
 include ~/.nano/tex.nanorc
 include ~/.nano/vi.nanorc
+include ~/.nano/yaml.nanorc
 include ~/.nano/zsh.nanorc
 include ~/.nano/zshrc.nanorc
-include ~/.nano/nanorc.nanorc
 # include /Users/Matthew/.projects/master-dotfiles/home/.nano/brew.nanorc
 
 ## Color setup
