@@ -60,9 +60,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
-# Homebrew editor
-export HOMEBREW_EDITOR=atom
-
 PIPENV_VENV_IN_PROJECT=1
 
 # zpython- zsh python interpreter
@@ -97,8 +94,6 @@ setopt always_to_end # move cursor to end if word had one match
 zstyle ':completion:*' menu select # select completions with arrow keys
 zstyle ':completion:*' group-name '' # group results by category
 zstyle ':completion:::::' completer _expand _complete _ignored _approximate # enable approximate matches for completion
-
-
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
