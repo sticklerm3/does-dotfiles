@@ -8,18 +8,65 @@
     icon: "gear"
     callback: "flex-tool-bar:edit-config-file"
     tooltip: "Edit Tool Bar"
-  }
-    {
-      type: "button"
-      tooltip: "Save File"
-      callback: "core:save"
-      icon: "save"
-      iconset: "fa"
-  }
-    {
-      type: "URL"
-      url: "https://bitbucket.org/"
-      icon: "ghost"
-      iconset: "fa"
-    }
+  },
+  {
+    type: 'button'
+    tooltip: 'Toggle Sidebar'
+    callback: 'tree-view:toggle'
+    icon: 'sitemap'
+    iconset: 'fa'
+  },
+  {
+    type: 'button'
+    tooltip: 'Toggle Minimap'
+    dependency: 'minimap'
+    callback: 'minimap:toggle'
+    icon: 'map'
+    iconset: 'fa'
+  },
+  {
+    type: "button"
+    tooltip: "Save File"
+    callback: "core:save"
+    icon: "save"
+    iconset: "fa"
+  },
+  {
+    type: 'button'
+    tooltip: 'List projects'
+    dependency: 'project-manager'
+    callback: 'project-manager:list-projects'
+    icon: 'file-submodule'
+  },
+  {
+    type: "URL"
+    url: "https://bitbucket.org/"
+    icon: "ghost"
+    iconset: "fa"
+  },
+  {
+    type: 'button'
+    tooltip: 'Git Diff Details'
+    dependency: 'git-diff-details'
+    callback: 'git-diff-details:toggle-git-diff-details'
+    icon: 'newspaper-o'
+    iconset: 'fa'
+  },
+  {
+    type: 'spacer'
+  },
+  {
+    type: 'button'
+    tooltip: 'Toggle Fullscreen'
+    callback: 'window:toggle-full-screen'
+    icon: 'arrow-expand-all'
+    iconset: 'mdi'
+  },
+  {
+    type: 'button'
+    tooltip: 'Reload Window'
+    callback: 'window:reload'
+    icon: 'refresh'
+    iconset: 'fa'
+  },
 ]
