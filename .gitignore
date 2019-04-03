@@ -1,3 +1,9 @@
+.netrc
+.pocket-config
+.zhist
+.z
+.sh_history
+.shell_env_local
 
 # Created by https://www.gitignore.io/api/macos,xcode
 # Edit at https://www.gitignore.io/?templates=macos,xcode
