@@ -1,0 +1,6 @@
+
+### Portable Profile ###
+source "~/Library/Mobile Documents/com~apple~CloudDocs/.portable_profile"
+
+### Portable Profile ###
+source "/Users/MattStickler/Library/Mobile Documents/com~apple~CloudDocs/.portable_profile"
