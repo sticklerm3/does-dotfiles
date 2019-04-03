@@ -1,0 +1,8 @@
+#!/bin/sh
+in1=`netstat -bI en0 | grep -v Ibytes | awk 'END { print $7 }'`
+out1=`netstat -bI en0 | grep -v Obytes | awk 'END { print $10 }'`
+sleep 1
+in2=`netstat -bI en0 | grep -v Ibytes | awk 'END { print $7 }'`
+out2=`netstat -bI en0 | grep -v Obytes | awk 'END { print $10 }'`
+awk -v in1="$in1" -v in2="$in2" 'BEGIN {printf "%.2f kb/s ", (in2-in1)/1024}'
+awk -v out1="$out1" -v out2="$out2" 'BEGIN {printf "%.2f kb/s", (out2-out1)/1024}'

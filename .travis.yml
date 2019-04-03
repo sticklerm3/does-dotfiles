@@ -1,35 +1,11 @@
-
 language: bash
-
+sudo: required
 os:
-- linux
-
-env:
-  - BASHVER=3.2
-  - BASHVER=4.0
-  - BASHVER=4.1
-  - BASHVER=4.2
-  - BASHVER=4.3
-  - BASHVER=4.4
-  - BASHVER=5.0
-
-
-matrix:
-  include:
-    - os: osx
-
-services:
-  - docker
-
+  - linux
+  - osx
+install:
+  - ./build/install.sh
 script:
-- |
-  if [[ "$TRAVIS_OS_NAME" == 'linux' && -n "$BASHVER" ]]; then
-    docker build --build-arg bashver=${BASHVER} --tag bats/bats:bash-${BASHVER} .
-    docker run -it bash:${BASHVER} --version
-    time docker run -it bats/bats:bash-${BASHVER} --tap /opt/bats/test
-  else
-    time bin/bats --tap test
-  fi
+  - ./build/build.sh
 notifications:
-  email:
-    on_success: never
+  email: false

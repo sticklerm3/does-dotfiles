@@ -1,0 +1,25 @@
+# lines that start with # are comments
+
+# Write video description to .description file
+--write-description
+
+# write metadate to a .info.json file
+--write-info-json
+
+# write medatata to video fle
+--add-metadata
+
+# write metadata to files xattrs
+--xattrs
+
+# always extract audio
+#-x
+
+# use .netrc config
+# --netrc
+
+# always extract best format
+-f best
+
+# Save all media to directory
+# -o /Volumes/Batdrive/Music/Downloads/%(title)s.%(ext)s

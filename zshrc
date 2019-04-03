@@ -2,7 +2,6 @@
 export PATH=$HOME/bin:/usr/local/bin:usr/local/sbin$PATH
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -31,6 +30,11 @@ if [ -e ~/.aliases ]; then
      source ~/.aliases
 fi
 
+# Load the zsh aliases file
+if [ -e ~/.aliases.zsh ]; then
+     source ~/.aliases.zsh
+fi
+
 # Load the exports file
 if [ -e ~/.exports ]; then
      source ~/.exports
@@ -55,15 +59,6 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
-
-# Less/Textmate 
-export LESSEDIT='mate -l %lm %f'
-
-# Homebrew editor
-export HOMEBREW_EDITOR=atom
-
-# Path to Docbook package for XML Toolcahin
-export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
 
 PIPENV_VENV_IN_PROJECT=1
 
@@ -99,8 +94,6 @@ setopt always_to_end # move cursor to end if word had one match
 zstyle ':completion:*' menu select # select completions with arrow keys
 zstyle ':completion:*' group-name '' # group results by category
 zstyle ':completion:::::' completer _expand _complete _ignored _approximate # enable approximate matches for completion
-
-
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -208,7 +201,9 @@ eval $(thefuck --alias FUCK)
 eval $(brew shellenv)
 
 # Homebrew Command-not-found
-if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
+if brew command command-not-found-init > /dev/null; then
+  eval "$(brew command-not-found-init)";
+fi
 
 # iterm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -235,7 +230,7 @@ autoload -Uz vcs_info
 source $(dirname $(gem which colorls))/tab_complete.sh
 
 # bitbucket shell scripts
-source ~/bin/bitbucket-cli/bitbucket-functions.sh
+# source ~/bin/bitbucket-cli/bitbucket-functions.sh
 
 # GRV-grv is currently an alias used by oh-my-zsh
 unalias grv

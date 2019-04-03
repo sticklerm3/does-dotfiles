@@ -10,7 +10,9 @@ _gitignoreio() {
     compadd -S '' $(_gitignoreio_get_command_list)
 }
 
+
 # compdef _gitignoreio gi
+
 
 # Create a new directory and enter it
 function mkd() {
