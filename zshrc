@@ -166,7 +166,6 @@ plugins=(
   git-extras
   iterm2
   noreallyjustfuckingstopalready
-  rbenv
   systemadmin
   tumult
   zsh-better-npm-completion
@@ -203,7 +202,7 @@ eval $(thefuck --alias FUCK)
 # eval "$(ndenv init -)"
 
 # Homebrew env
-eval $(brew shellenv)
+eval "$(brew shellenv)"
 
 # Homebrew Command-not-found
 if brew command command-not-found-init > /dev/null; then
