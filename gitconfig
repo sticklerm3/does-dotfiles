@@ -3,18 +3,12 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	name = Matthew Stickler
-	email = sticklerm3@me.com
+[include]
+	path = ~/.gitconfig.local
 [core]
-	excludesfile = /Users/Matthew/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = nano
 	pager = diff-so-fancy | less --tabs=4 -RFX
-[gui]
-	recentrepo = /Users/Matthew/.projects/new-machine
-	tabsize = 2
-	fontui = -family \"Source Code Pro\" -size 13 -weight normal -slant roman -underline 0 -overstrike 0
-	fontdiff = -family \"SpaceMono Nerd Font Mono\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -22,14 +16,9 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
-	template = /Users/Matthew/.stCommitMsg
+	template = ~/.stCommitMsg
 [push]
 	default = matching
-[bulkworkspaces]
-	wikis = /Users/Matthew/Developer/wiki
-	bitbucket-repos = /Users/Matthew/.bitbucket
-	misc-dotfiles = /Users/Matthew/Developer/GitHub/dotfile-repos
-	zsh-plugins = /Users/Matthew/.oh-my-zsh/custom/plugins
 [color]
 	ui = true
 [color "diff-highlight"]
@@ -46,3 +35,7 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[alias]
+	sl = log --oneline --decorate -20
+	sla = log --oneline --decorate --graph --all -20
+	slap = log --oneline --decorate --graph --all
