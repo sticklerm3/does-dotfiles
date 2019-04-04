@@ -30,7 +30,7 @@ if [ -e ~/.aliases ]; then
      source ~/.aliases
 fi
 
-# Load the zsh aliases file
+# Load zsh-aliases file
 if [ -e ~/.aliases.zsh ]; then
      source ~/.aliases.zsh
 fi
@@ -54,6 +54,9 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # added for tmux
 export TERM="xterm-256color"
 
+# rcm config
+export RCRC="$HOME/.rcrc"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -67,10 +70,10 @@ module_path=($module_path /usr/local/lib/zpython)
 
 # fish like syntax highlights, autosuggestions, and hist search
 # NOTE: zsh-syntax-highlighting MUST sourced BEFORE zsh-history-substring-search
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+source "$(brew --prefix)/opt/git-extras/share/git-extras/git-extras-completion.zsh"
 
 # History
 HISTFILE=$HOME/.zhist
@@ -166,24 +169,13 @@ plugins=(
   zsh-better-npm-completion
 )
 
-# Removed plugins (theyre installed by homebrew):
-# zsh-syntax-highlighting
-# zsh-autosuggestions
-# zsh-completions
-
+# Loads OMZ
 source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nano'
-else
-  export EDITOR='atom'
-fi
 
 # rbenv
 eval "$(rbenv init -)"
@@ -207,10 +199,6 @@ fi
 # iterm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# Completion
-# experiment: commented out as omz calls compinit 
-# autoload -U compinit && compinit
-
 # comp cache
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
 if [ $(date +'%j') != $updated_at ]; then
@@ -226,7 +214,7 @@ zmodload -i zsh/complist
 autoload -Uz vcs_info
 
 # colorls tab completion
-source $(dirname $(gem which colorls))/tab_complete.sh
+source "$(dirname $(gem which colorls))/tab_complete.sh"
 
 # bitbucket shell scripts
 # source ~/bin/bitbucket-cli/bitbucket-functions.sh
@@ -236,7 +224,7 @@ unalias grv
 # unalias git
 
 # prompt customizations
-source ~/.p9k.zsh
+source "$DOTS/p9k.zsh"
 
 # added by travis gem
 [ -f /Users/Matthew/.travis/travis.sh ] && source /Users/Matthew/.travis/travis.sh
