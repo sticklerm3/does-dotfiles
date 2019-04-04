@@ -1,4 +1,5 @@
+DOTFILES_DIRS="~/.dotfiles"
 HOSTNAME="Matthews-MacBook-Air-2.local"
-EXCLUDES="README*.md LICENSE .travis.yml .editorconfig .gitignore build/*"
+EXCLUDES="*.md LICENSE .travis.yml .editorconfig install.sh macOS=setup.sh .gitignore build/*"
 COPY_ALWAYS="gitflow_export zsh_weather.zsh"
-UNDOTTED="bin/ current-itunes-track"
+UNDOTTED="bin current-itunes-track"
