@@ -4,24 +4,17 @@
 
 [
   {
-    type: "button"
-    icon: "gear"
-    callback: "flex-tool-bar:edit-config-file"
-    tooltip: "Edit Tool Bar"
-  },
-  {
     type: 'button'
-    tooltip: 'Toggle Sidebar'
-    callback: 'tree-view:toggle'
-    icon: 'sitemap'
+    tooltip: 'Sticklerm3 on Github'
+    url: 'https://github.com/sticklerm3'
+    icon: 'galactic-republic'
     iconset: 'fa'
   },
   {
     type: 'button'
-    tooltip: 'Toggle Minimap'
-    dependency: 'minimap'
-    callback: 'minimap:toggle'
-    icon: 'map'
+    tooltip: 'Toggle Fullscreen'
+    callback: 'window:toggle-full-screen'
+    icon: 'compress'
     iconset: 'fa'
   },
   {
@@ -33,40 +26,45 @@
   },
   {
     type: 'button'
-    tooltip: 'List projects'
-    dependency: 'project-manager'
-    callback: 'project-manager:list-projects'
-    icon: 'file-submodule'
-  },
-  {
-    type: "URL"
-    url: "https://bitbucket.org/"
-    icon: "ghost"
-    iconset: "fa"
-  },
-  {
-    type: 'button'
-    tooltip: 'Git Diff Details'
-    dependency: 'git-diff-details'
-    callback: 'git-diff-details:toggle-git-diff-details'
-    icon: 'newspaper-o'
+    tooltip: 'Toggle Sidebar'
+    callback: 'tree-view:toggle'
+    icon: 'chevron-circle-right'
     iconset: 'fa'
   },
   {
-    type: 'spacer'
+    type: 'button'
+    tooltip: 'Toggle Minimap'
+    dependency: 'minimap'
+    callback: 'minimap:toggle'
+    icon: 'map'
+    iconset: 'fa'
   },
   {
     type: 'button'
-    tooltip: 'Toggle Fullscreen'
-    callback: 'window:toggle-full-screen'
-    icon: 'arrow-expand-all'
-    iconset: 'mdi'
+    tooltip: 'List projects'
+    dependency: 'project-manager'
+    callback: 'project-manager:list-projects'
+    icon: 'list-ul'
+    iconset: 'fa'
+  },
+  {
+    type: 'button'
+    url: "https://bitbucket.org/"
+    tooltip: 'Bitbucket'
+    icon: "bitbucket"
+    iconset: "fa"
   },
   {
     type: 'button'
     tooltip: 'Reload Window'
     callback: 'window:reload'
-    icon: 'refresh'
+    icon: 'redo'
     iconset: 'fa'
   },
+    # {
+    #   type: "button"
+    #   icon: "gear"
+    #   callback: "flex-tool-bar:edit-config-file"
+    #   tooltip: "Edit Tool Bar"
+    # },
 ]
