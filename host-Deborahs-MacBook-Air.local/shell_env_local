@@ -1,3 +1,0 @@
-# Homebrew Cask env settings
-# Options can be found in man brew-cask under ENVIRONMENT
-# export HOMEBREW_CASK_OPTS="−−appdir=~/Applications"

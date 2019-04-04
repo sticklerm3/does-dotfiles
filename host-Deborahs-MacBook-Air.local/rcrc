@@ -1,2 +1,4 @@
 DOTFILES_DIRS="/Users/MattStickler/.dotfiles"
 HOSTNAME="Deborahs-MacBook-Air.local"
+UNDOTTED="bin current-itunes-track"
+EXCLUDES="*.md LICENSE .travis.yml .editorconfig install.sh macOS-setup.sh .gitignore build/*"
