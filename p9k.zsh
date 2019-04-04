@@ -85,7 +85,7 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 # ******************OLD/WORKING CURRENTLY-PROMPT******************
 #================================================================================
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(custom_now_playing rbenv time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(custom_now_playing custom_zsh_weather custom_zsh_wifi time)
 
 #=======================================
 # LOADING POWERLEVEL9K
