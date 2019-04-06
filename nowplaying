@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ `uname` = "Darwin" ]; then
   track="$(osascript ~/current-itunes-track)"
   if [ "$track" ]; then

@@ -20,6 +20,10 @@ fi
 # brew installed zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
+fi
+
 # Load the Functions file
 if [ -e ~/.zfunctions.zsh ]; then
      source ~/.zfunctions.zsh
@@ -224,7 +228,7 @@ unalias grv
 # unalias git
 
 # prompt customizations
-source "$DOTS/p9k.zsh"
+source "$HOME/.p9k.zsh"
 
 # added by travis gem
 [ -f /Users/Matthew/.travis/travis.sh ] && source /Users/Matthew/.travis/travis.sh
