@@ -9,7 +9,7 @@ package thefuck
 package weather
 theme cyan
 theme graystatus
-theme pure
+theme kawasaki
 theme sashimi
 theme shellder
 theme simple-ass-prompt
