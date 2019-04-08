@@ -1,5 +1,5 @@
-DOTFILES_DIRS="~/.dotfiles"
+DOTFILES_DIRS="/Users/Matthew/.dotfiles"
 HOSTNAME="Matthews-MacBook-Air-2.local"
-EXCLUDES="*.md LICENSE .travis.yml .editorconfig install.sh macOS=setup.sh .gitignore build/*"
-COPY_ALWAYS="gitflow_export zsh_weather.zsh"
+EXCLUDES="README.md LICENSE Scripts .travis.yml .editorconfig .gitignore build bitbucket-pipelines.yml"
+COPY_ALWAYS="gitflow_export"
 UNDOTTED="bin current-itunes-track"
