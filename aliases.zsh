@@ -22,3 +22,4 @@ hash -d omf=$HOME/.config/omf/
 hash -d omz=$HOME/.oh-my-zsh/
 hash -d dots=$HOME/.dotfiles/
 hash -d bukt=$HOME/.bitbucket/
+hash -d icldocs="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Documents/"

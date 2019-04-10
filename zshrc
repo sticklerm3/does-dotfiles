@@ -20,10 +20,6 @@ fi
 # brew installed zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  source $(brew --prefix)/etc/brew-wrap
-fi
-
 # Load the Functions file
 if [ -e ~/.zfunctions.zsh ]; then
      source ~/.zfunctions.zsh
@@ -176,7 +172,7 @@ plugins=(
 # Loads OMZ
 source $ZSH/oh-my-zsh.sh
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

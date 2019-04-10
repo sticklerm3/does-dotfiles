@@ -1,0 +1,5 @@
+# Config file for houndCI
+
+shellcheck:
+  enabled: true
+  config_file: .shellcheck.yml
