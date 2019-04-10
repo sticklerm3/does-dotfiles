@@ -221,7 +221,7 @@ source "$(dirname $(gem which colorls))/tab_complete.sh"
 
 # GRV-grv is currently an alias used by oh-my-zsh
 unalias grv
-# unalias git
+unalias hub
 
 # prompt customizations
 source "$HOME/.p9k.zsh"

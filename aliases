@@ -3,11 +3,10 @@
 # shortcuts
 alias fuckyou="sudo rm -Rf"
 alias please='sudo'
-alias bye=exit
+# alias bye=exit
 
 # Colorls
-alias ls="colorls"
-# alias cls="colorls"
+alias cls="colorls"
 # alias lsa="colorls -lA"
 # alias lc="colorls -lA --sd"
 
@@ -21,12 +20,8 @@ alias plistbuddy="/usr/libexec/PlistBuddy"
 alias lsregister="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister"
 
 # Misc
-alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
 alias profox="/Applications/Firefox.app/Contents/MacOS/firefox-bin --profilemanager"
-alias byefelicia="sudo reboot"
-alias pocket="pocket-cli"
-alias pkt="pocket-cli"
-alias pct="pocket-cli"
+alias byefelicia="logout"
 alias b16="base16-manager"
 alias rbenvdr="curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash"
 alias sc="shortcuts"

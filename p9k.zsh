@@ -85,7 +85,7 @@ POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR="\ue0d0" # 
 #fi
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(custom_now_playing custom_zsh_battery_level custom_zsh_wifi_signal time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(custom_now_playing custom_zsh_battery custom_zsh_wifi_signal time)
 
 #=======================================
 # LOADING POWERLEVEL9K
