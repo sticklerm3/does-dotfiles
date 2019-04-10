@@ -9,3 +9,12 @@
 # atom.workspace.observeTextEditors (editor) ->
 #   editor.onDidSave ->
 #     console.log "Saved! #{editor.getPath()}"
+
+# constructs Markdown link from the selected text and the clipboard contents as the URL
+atom.commands.add 'atom-text-editor', 'markdown:paste-as-link', ->
+  return unless editor = atom.workspace.getActiveTextEditor()
+
+  selection = editor.getLastSelection()
+  clipboardText = atom.clipboard.read()
+
+  selection.insertText("[#{selection.getText()}](#{clipboardText})")

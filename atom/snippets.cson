@@ -19,11 +19,14 @@
 # If you are unfamiliar with CSON, you can read more about it in the
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
-# Ketboard wrapper for markdown
+# Keyboard wrapper for markdown
 '.text.md':
-  'Keyboard Input':
+  'Keyboard HTML':
     'prefix': 'kbd'
     'body': '<kbd>$1</kbd>$0'
+  'CMD Key':
+    'prefix': 'cmdkbd'
+    'body': '<kbd>⌘</kbd>$1'
 
   # 'Command Key':
   #   'prefix': 'command'

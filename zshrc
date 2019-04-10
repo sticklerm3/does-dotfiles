@@ -20,10 +20,6 @@ fi
 # brew installed zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  source $(brew --prefix)/etc/brew-wrap
-fi
-
 # Load the Functions file
 if [ -e ~/.zfunctions.zsh ]; then
      source ~/.zfunctions.zsh
@@ -225,7 +221,7 @@ source "$(dirname $(gem which colorls))/tab_complete.sh"
 
 # GRV-grv is currently an alias used by oh-my-zsh
 unalias grv
-# unalias git
+unalias hub
 
 # prompt customizations
 source "$HOME/.p9k.zsh"
