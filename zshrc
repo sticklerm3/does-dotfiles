@@ -2,6 +2,8 @@
 export PATH=$HOME/bin:/usr/local/bin:usr/local/sbin$PATH
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PYTHONPATH="$(brew --prefix)/lib/python2.7/site-packages"
+export PATH="$PATH:$(brew --prefix)/share/python"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -177,8 +179,12 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# rbenv
-eval "$(rbenv init -)"
+# Rbenv
+export RBENV_ROOT="${HOME}/.rbenv"
+if [ -d "${RBENV_ROOT}" ]; then
+  export PATH="${RBENV_ROOT}/bin:${PATH}"
+  eval "$(rbenv init -)"
+fi
 
 # wtf
 eval $(thefuck --alias)
