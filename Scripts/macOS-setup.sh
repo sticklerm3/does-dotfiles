@@ -81,12 +81,11 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 echo "on to the dotfiles now!"
 brew install thoughtbot/rcm
-mkdir -p "$HOME"/.dotfiles
+mkdir -p "$HOME/.dotfiles"
 git clone https://github.com/sticklerm3/does-dotfiles.git "$HOME"/.dotfiles
-sh install.sh
 
 echo "now that that's taken care of, lets change the default to zsh!"
 chsh -s "$(brew --prefix)/bin/zsh" "$USER"
 
 echo "zsh is now your login shell! After the brew bundle command runs log out and back in for the changes to take effect."
-brew bundle install --file="$HOME"/.dotfiles/Brewfile
+brew bundle install --file="$HOME/.Brewfile"

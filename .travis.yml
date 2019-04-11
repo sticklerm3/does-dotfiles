@@ -1,11 +1,17 @@
 language: bash
 sudo: required
+
 os:
   - linux
   - osx
+
+  osx_image: xcode10
+
 install:
   - ./build/install.sh
+
 script:
   - ./build/build.sh
+
 notifications:
   email: false
