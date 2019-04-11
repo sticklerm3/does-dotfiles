@@ -1,0 +1,15 @@
+echo -e "
+${RED#     }           # # # # # # # # #                        ${fieldlist[0]}
+${RED#     }         # # # # # # # # # # #                      ${fieldlist[1]}
+${ORANGE#  }       # # # # # # # # # # # # #                    ${fieldlist[2]}
+${ORANGE#  }     # # # # # # # #       # # # #                  ${fieldlist[3]}
+${YELLOW#  }   # # # #   # # # # #       # # # #                ${fieldlist[4]}
+${YELLOW#  } # # # #       # # # # #       # # # #              ${fieldlist[5]}
+${GREEN#   } # # # # # # # # # # # # #       # # # #            ${fieldlist[6]}
+${GREEN#   }   # # # # # # #   # # # # #       # # # #          ${fieldlist[7]}
+${BLUE#    }     # # # # #       # # # # #       # # # #        ${fieldlist[8]}
+${BLUE#    }       # #             # # # # #       # # # #      ${fieldlist[9]}
+${PURPLE#  }                         # # # # # # # # # # # #    ${fieldlist[10]}
+${PURPLE#  }                           # # # # # # # # # # # #  ${fieldlist[11]}
+${normal}                                                       ${fieldlist[12]}
+"
