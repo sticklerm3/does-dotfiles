@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-set -eo pipefail
 
-if [ "$(uname -s)" = "Darwin" ]; then
-  ./macOS-setup.sh
-else
-  ./install.sh
-fi
+shellcheck /Scripts/*
+
+# if [ "$(uname -s)" = "Darwin" ]; then
+#   ./macOS-setup.sh
+# else
+#   ./install.sh
+# fi
 
 # test -n "${DEBUG:-}" && set -x
 #
