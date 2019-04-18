@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:usr/local/sbin$PATH
-export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PYTHONPATH="$(brew --prefix)/lib/python2.7/site-packages"
 export PATH="$PATH:$(brew --prefix)/share/python"

@@ -5,6 +5,7 @@ tap "homebrew/core"
 tap "sambadevi/powerlevel9k"
 tap "sticklerm3/pourhouse"
 tap "thoughtbot/formulae"
+
 # Completion for Atom Package Manager
 brew "apm-bash-completion"
 # Bourne-Again SHell, a UNIX command interpreter

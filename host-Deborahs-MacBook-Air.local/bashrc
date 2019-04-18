@@ -6,8 +6,3 @@ if type brew 2&>/dev/null; then
 
 export GEM_HOME="/usr/local"
 if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
-
-# github-markdown-toc completion
-eval "$(gh-md-toc --completion-script-bash)"if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
-if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi
-if [ -f $(brew --prefix)/etc/bash_completion ]; then source $(brew --prefix)/etc/bash_completion; fi

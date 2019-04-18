@@ -2,9 +2,9 @@
 set -eo pipefail
 
 if [ "$(uname -s)" = "Darwin" ]; then
-  ./macOS-setup.sh
+  ./Scripts/install.sh
 else
-  ./install.sh
+  rcup -v 
 fi
 
 # test -n "${DEBUG:-}" && set -x
